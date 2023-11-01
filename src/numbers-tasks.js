@@ -304,9 +304,11 @@ function getSumToN(n, sum = 0) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num, sum = 0) {
+  if (num < 10) return sum + num;
+  return getSumOfDigits((num - (num % 10)) / 10, sum + (num % 10));
 }
+// console.log(getSumOfDigits(202));
 
 /**
  * Returns true if the given number is a power of two, false otherwise.
