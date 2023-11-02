@@ -439,9 +439,21 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  return Number.isFinite(number);
+  // console.log((Number.isFinite(number) + ' ' + !Number.isNaN(number)));
+  return Number.isFinite(number) && !Number.isNaN(number);
 }
 
+/* console.log(isNumber(Infinity)); // false,'value Infinity is not a number'
+console.log(isNumber(NaN)); // false, 'value NaN is not a number'
+console.log(isNumber(0)); // true, 'value 0 is a number'
+console.log(isNumber('a' / 1)); // false,"value 'a'/1 is not a number"
+console.log(isNumber('a')); // false, "value 'a' is not a number"
+console.log(isNumber(5)); // true, 'value 5 is a number'
+console.log(isNumber('5')); // false, "value '5' is not a number"
+console.log(isNumber(null)); // false, 'value null is not a number'
+console.log(isNumber('')); // false, "value '' is not a number"
+console.log(isNumber(true)); // false, 'value true is not a number'
+console.log(isNumber(10)); // true, 'value 10 is a number' */
 /**
  * Returns a boolean value indicating whether a number is an integer or not.
  *
