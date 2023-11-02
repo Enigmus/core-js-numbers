@@ -321,10 +321,14 @@ function getSumOfDigits(num, sum = 0) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num, i = 2) {
+  if (i > num) return false;
+  if (i === num) return true;
+
+  return isPowerOfTwo(num, i * 2);
 }
 
+// console.log(isPowerOfTwo(512));
 /**
  * Returns the sine of a number.
  *
@@ -430,9 +434,8 @@ function getNumberValue(number) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(/* number */) {
-  // return Number.isFinite(number);
-  throw new Error('Not implemented');
+function isNumber(number) {
+  return Number.isFinite(number);
 }
 
 /**
@@ -632,9 +635,16 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  if (number === 0) return 0;
+  let s = 0;
+  for (let i = 1; i <= Math.abs(number); i += 1) {
+    if (i % 2 !== 0) s += 1;
+  }
+  return s;
 }
+
+// console.log(getCountOfOddNumbers(-15));
 
 module.exports = {
   getRectangleArea,
