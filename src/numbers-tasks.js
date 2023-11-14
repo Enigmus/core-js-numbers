@@ -619,8 +619,10 @@ function getMaxNumber(firstNumber, secondNumber) {
  * -1, 1 => -1 | 0 | 1
  */
 function getRandomInteger(min, max) {
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min) + min);
 }
+
+// console.log(getRandomInteger(-5, 0 ));
 
 /**
  * Returns the length of the hypotenuse of a right triangle.
