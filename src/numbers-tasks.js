@@ -125,10 +125,11 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *    37     => 7
  *     5     => 5
  *     0     => 0
+ * Другое решение
+ * const str = String(value);
+  return Number(str[str.length - 1]);
  */
 function getLastDigit(value) {
-  /* const str = String(value);
-  return Number(str[str.length - 1]); */
   if (value < 10) return value;
   return value % 10;
 }
@@ -312,7 +313,6 @@ function getSumOfDigits(num, sum = 0) {
   if (num < 10) return sum + num;
   return getSumOfDigits((num - (num % 10)) / 10, sum + (num % 10));
 }
-// console.log(getSumOfDigits(202));
 
 /**
  * Returns true if the given number is a power of two, false otherwise.
@@ -332,7 +332,6 @@ function isPowerOfTwo(num, i = 2) {
   return isPowerOfTwo(num, i * 2);
 }
 
-// console.log(isPowerOfTwo(512));
 /**
  * Returns the sine of a number.
  *
@@ -439,7 +438,6 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  // console.log((Number.isFinite(number) + ' ' + !Number.isNaN(number)));
   return Number.isFinite(number) && !Number.isNaN(number);
 }
 
